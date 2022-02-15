@@ -1,24 +1,41 @@
+/* class="name" -> .name 
+id="name" -> #name
+<etiqueta> -> etiqueta */
+
+
 /*====================
-=======Structure======
+======= Parte estructural ======
 ======================*/
 
+/* body comprende todo dentro de la etiqueta <body> en el html */
 body{
+    /* Color de fondo */
     background-color: hsl(226 63% 45%);
     display:flex; 
-    flex-direction:column;    
+    flex-direction:column;
+    /* Margen externo, espacio entre divs
+    Se expresa en 4 direcciones. Arriba - Abajo - Izquierda - Derecha
+    ej: margin: 1em 1em 1em 1em(1em en cada dirección)
+    margin: 1em 0 (1em arriba y abajo 0 izquierda y derecha)
+    margin: 1em (todos un 1em) 
+    margin: 1em auto (1em arriba y abajo. Centrado izquierda y derecha) */
     margin: 1em auto;
+    /* Alto expresado en vh */
     min-height: 100vh;
+    /* Ancho expresado en % */
     width: 90%;
 }
 
 header{
     display: flex;
     height: 10vh;
+    /* define cómo el navegador distribuye el espacio entre y alrededor de los items flex */
     justify-content: start;
 }
 
 main{
     margin: 1em 0;
+    /* En este caso como body contiene main. Ocupará el 100% de la caja que lo contiene. */
     width: 100%;
 }
 
@@ -28,14 +45,17 @@ footer{
 }
 
 /*====================
-======Typography======
+====== Tipografía ======
 ======================*/
 
+/* las <etiquetas> se separan por "," */
 h1, h2, h3, h4, h5, h6, a, p{
+    /* Color de la tipografía */
     color: hsl(0, 0%, 100%);
 }
 
 h1, h2, h3, h4 {
+    /* Fuente que va a utilizar */
     font-family: "Ubuntu";
 }
 
@@ -48,8 +68,12 @@ a, td, p, button{
 }
 
 h1 {
+    /* Tamaño de la tipografía */
     font-size: 2.5em;
+    /* Grosor de la tipografía */
     font-weight: 600;
+    /* Se usa para establecer el formato de texto a subrayado ( underline ) y suprarrayado ( overline ),
+     tachado ( line-through )... */
     text-decoration: none;
 }
 
@@ -72,7 +96,7 @@ a {
     text-decoration: none;
     transition: 300ms;
 }
-
+/* x:algo es una condición que realiza una acción. Es una pseudoclase. */
 a:focus, a:hover {
     outline: none;
     outline-offset: 0;
@@ -80,32 +104,35 @@ a:focus, a:hover {
 }
 
 /*====================
-========Image=========
+======== Imagenes =========
 ======================*/
 
 img {
+    /* Máximo de ancho de su contenedor */
     max-width: 100%;
 }
 
 /*====================
-========Logo=========
+======== Logo =========
 ======================*/
 
 .logo{
+    /* max-content hace que la caja se ajuste al contenido. */
     width: max-content;
 }
-
+/* .logo svg -> En este caso se lee como "el svg que está dentro del logo...." */
 .logo svg{
     height: 3em;
     width: 3em;
 }
 
 .logo svg path{
+    /* Color de un svg. Siempre se da en el path */
     fill:hsl(19, 100%, 50%);
 }
 
 /*====================
-========Title=========
+======== Título =========
 ======================*/
 
 .title{
@@ -113,11 +140,12 @@ img {
 }
 
 .title h1{
+    /* Alineación del texto */
     text-align: left;
 }
 
 /*====================
-========Subtitle======
+======== Subtítulo ======
 ======================*/
 
 .subtitle{
@@ -132,7 +160,7 @@ img {
 }
 
 /*====================
-=========CRUD=========
+========= C.R.U.D =========
 ======================*/
 
 .crud{
@@ -153,8 +181,12 @@ img {
 }
 
 .crud__table-grid{
+    /* display propiedad que establece los tipos de visualización interna y externa de un elemento.
+    grid crea una cuadricula. Puede sobrepasar el tamaño del <div> si se añade un margen externo. */
     display: grid;
+    /* Establece la cantidad de columnas y el espacio que ocupa en el <div> */
     grid-template-columns: 25% 25% 25% 25%;
+    /* Margen externo de la cuadrícula. */
     grid-gap: 0.5em;
 }
 
@@ -163,12 +195,16 @@ img {
 }
 
 .crud__table-flex{
+    /* flex crea una cuadricula flexible. Se adapta mejor al tamaño del <div> */
     display: flex;
+    /* flex-wrap especifica que los elementos se adapten al tamaño del <div> pasando de una fila a otra de forma fluida. */
     flex-wrap: wrap;
+    /* Margen externo usado en flex. */
     gap: 0.5em;
 }
 
 .crud__table-flex-element{
+    /* flex-basis establece el tamaño de cada cuadro */
     flex-basis: 25%;
 }
 
@@ -260,7 +296,7 @@ img {
     margin-bottom: 1em;
     text-align: center;
 }
-
+/* @media hace referencia al responsive. En este caso es para un televisor */
 @media (min-width: 1920px) {
 
     h1 {
